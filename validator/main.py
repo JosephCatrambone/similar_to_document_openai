@@ -56,7 +56,7 @@ class SimilarToDocument(Validator):
         else:
             client = OpenAI()
             def embed(txt):
-                return client.embeddings.create(model=embedding_model_name, input=txt)
+                return client.embeddings.create(model=embedding_model_name, input=txt).data[0].embedding
             self._embed_function = embed
 
         # Compute the document embedding
