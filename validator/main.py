@@ -76,7 +76,7 @@ class SimilarToDocument(Validator):
             value_embedding = self._embed_function(value)
         except Exception as e:
             raise RuntimeError(
-                f"Failed to encode the value {value} using the model {self._model}."
+                f"Failed to encode the value {value}."
             ) from e
 
         # Compute the cosine similarity between the document and the value
@@ -101,10 +101,10 @@ def dot_product(a: list[float], b: list[float]) -> float:
 
 
 def cosine_similarity(a: list[float], b: list[float]) -> float:
-    a_magnitude = dot_product(a, a)
-    b_magnitude = dot_product(b, b)
+    a_magnitude = dot_product(a, a)**0.5
+    b_magnitude = dot_product(b, b)**0.5
     # Prevent divide-by-zero:
     if a_magnitude == 0 or b_magnitude == 0:
         a_magnitude = 1
         b_magnitude = 1
-    return dot_product(a, b) / (a_magnitude * b_magnitude)**0.5
+    return dot_product(a, b) / (a_magnitude * b_magnitude)
