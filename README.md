@@ -1,13 +1,15 @@
 ## Overview
 
 | Developed by | Guardrails AI |
-| Date of development | Feb 15, 2024 |
+| Date of development | 2024/08/06 |
 | Validator type | Quality |
 | Blog |  |
 | License | Apache 2 |
 | Input/Output | Output |
 
 ## Description
+
+Forked from https://github.com/guardrails-ai/similar_to_document 
 
 The objective of this validator is to ensure that any LLM-generated text is similar (in content) to a previously known document text. This validator works comparing the LLM generated text with a known “good” document text based on cosine similarity.
 
@@ -18,11 +20,8 @@ The primary intended uses of this validator is if a “golden” output is known
 ### Requirements
 
 * Dependencies:
-    - `sentence-transformers`
+    - openai
     - guardrails-ai>=0.4.0
-
-* Foundation model access keys:
-    - Yes, if commercial embedding model used
 
 ## Installation
 
