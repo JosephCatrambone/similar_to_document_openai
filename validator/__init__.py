@@ -1,3 +1,3 @@
-from .main import SimilarToDocument
+from .main import SimilarToDocumentOpenAI
 
-__all__ = ["SimilarToDocument"]
+__all__ = ["SimilarToDocumentOpenAI"]
