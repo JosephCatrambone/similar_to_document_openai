@@ -13,7 +13,7 @@ from openai import OpenAI
 
 
 @register_validator(name="guardrails/similar_to_document_openai", data_type="string")
-class SimilarToDocument(Validator):
+class SimilarToDocumentOpenAI(Validator):
     """Validates that a value is similar to the document.
 
     This validator checks if the value is similar to the document by checking
